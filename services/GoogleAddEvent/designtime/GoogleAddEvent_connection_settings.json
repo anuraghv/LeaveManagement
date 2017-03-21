@@ -1,0 +1,32 @@
+{
+  "authType" : "NONE",
+  "contentType" : "application/json",
+  "endpointAddress" : "https://www.googleapis.com/calendar/v3/calendars/wavemaker.com_ns4nmla5jpm7afdroca52hjpjk@group.calendar.google.com/events",
+  "method" : "POST",
+  "requestBody" : "{\n  \"end\": \n  {\n    \"date\": \"2016-04-06\"\n  },\n  \"start\": \n  {\n    \"date\": \"2016-04-05\"\n  },\nsummary:\"test\"\n}",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"kind\":\"calendar#event\",\"etag\":\"\\\"2936544670894000\\\"\",\"id\":\"4k70u1g5ldssnnme36ccrplqpk\",\"status\":\"confirmed\",\"htmlLink\":\"https://www.google.com/calendar/event?eid=NGs3MHUxZzVsZHNzbm5tZTM2Y2NycGxxcGsgd2F2ZW1ha2VyLmNvbV9uczRubWxhNWpwbTdhZmRyb2NhNTJoanBqa0Bn\",\"created\":\"2016-07-11T21:25:35.000Z\",\"updated\":\"2016-07-11T21:25:35.447Z\",\"summary\":\"test\",\"creator\":{\"email\":\"anurag.parashar@wavemaker.com\",\"displayName\":\"Anurag Parashar\"},\"organizer\":{\"email\":\"wavemaker.com_ns4nmla5jpm7afdroca52hjpjk@group.calendar.google.com\",\"displayName\":\"Vacations\",\"self\":true},\"start\":{\"date\":\"2016-04-05\"},\"end\":{\"date\":\"2016-04-06\"},\"iCalUID\":\"4k70u1g5ldssnnme36ccrplqpk@google.com\",\"sequence\":0,\"hangoutLink\":\"https://plus.google.com/hangouts/_/wavemaker.com/test?hceid=d2F2ZW1ha2VyLmNvbV9uczRubWxhNWpwbTdhZmRyb2NhNTJoanBqa0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t.4k70u1g5ldssnnme36ccrplqpk\",\"reminders\":{\"useDefault\":true}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "ETag" : [ "\"2936544670894000\"" ],
+      "Expires" : [ "Mon, 01 Jan 1990 00:00:00 GMT" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Alternate-Protocol" : [ "443:quic" ],
+      "Server" : [ "GSE" ],
+      "Cache-Control" : [ "no-cache, no-store, max-age=0, must-revalidate" ],
+      "Pragma" : [ "no-cache" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "Alt-Svc" : [ "quic=\":443\"; ma=2592000; v=\"36,35,34,33,32,31,30,29,28,27,26,25\"" ],
+      "Date" : [ "Mon, 11 Jul 2016 21:25:35 GMT" ],
+      "Vary" : [ "Origin", "X-Origin" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "application/json; charset=UTF-8" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null
+}

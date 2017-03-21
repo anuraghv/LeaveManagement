@@ -1,0 +1,36 @@
+<wm-page data-ng-controller="LeaveManagementPageController" pagetitle="Leave Management" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1" accessroles="admin"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="page_content1"> 
+            <wm-panel title="Pending Vacation Requests" name="panel1" class="panel-default" collapsible="true" showheader="true" readonlygrid="true"> 
+                <wm-panel-footer name="panel_footer1"></wm-panel-footer> 
+                <wm-grid dataset="bind:Variables.HrdbVacationData.dataSet" name="pendingVacationGrid" spacing="normal" shownavigation="false" class="panel-default"> 
+                    <wm-grid-column binding="employee.firstname" caption="First Name" type="string" primary-key="false" generator="assigned" readonly="true" show="true" related-entity-name="Employee"></wm-grid-column> 
+                    <wm-grid-column binding="employee.lastname" caption="Last Name" type="string" primary-key="false" generator="assigned" readonly="true" mobiledisplay="false" show="true" related-entity-name="Employee"></wm-grid-column> 
+                    <wm-grid-column binding="startdate" caption="Start Date" type="date" primary-key="false" generator="assigned" readonly="true" datepattern="yyyy-MM-dd" formatpattern="toDate" show="true"></wm-grid-column> 
+                    <wm-grid-column binding="enddate" caption="End Date" type="date" primary-key="false" generator="assigned" readonly="true" datepattern="yyyy-MM-dd" formatpattern="toDate" show="true"></wm-grid-column> 
+                    <wm-grid-column binding="status" caption="Status" type="character" primary-key="false" generator="assigned" readonly="true" mobiledisplay="false" show="true"></wm-grid-column> 
+                    <wm-grid-column binding="AcceptMobile" caption="Accept" type="custom" widget-type="button" show="true" readonly="false"> 
+                        <wm-button caption="Accept" show="true" class="btn-sm btn-success" iconname="glyphicon glyphicon-ok" on-click="acceptLeave(row,event)" data-ng-class=""></wm-button> 
+                    </wm-grid-column> 
+                    <wm-grid-column binding="rejectMobile" caption="Decline" type="custom" widget-type="button" show="true" readonly="false"> 
+                        <wm-button caption="Reject" show="true" class="btn-sm btn-danger" iconname="glyphicon glyphicon-remove-circle" on-click="rejectLeave(row)" data-ng-class=""></wm-button> 
+                    </wm-grid-column> 
+                </wm-grid> 
+            </wm-panel> 
+            <wm-panel title="Processed Requests" name="panel2" class="panel-default" collapsible="true" showheader="true" expanded="false"> 
+                <wm-panel-footer name="panel_footer2"></wm-panel-footer> 
+                <wm-grid name="grid5" readonlygrid="true" dataset="bind:Variables.HrdbVacationRequests.dataSet" shownavigation="false" class="panel-default"> 
+                    <wm-grid-column binding="fname" caption="Fname" type="string" backgroundcolor="" textcolor="" primary-key="" readonly="true" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="lname" caption="Lname" type="string" backgroundcolor="" textcolor="" primary-key="" readonly="true" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="false"></wm-grid-column> 
+                    <wm-grid-column binding="startdate" caption="Start" type="string" backgroundcolor="" textcolor="" primary-key="" readonly="true" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="enddate" caption="End" type="string" backgroundcolor="" textcolor="" primary-key="" readonly="true" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="status" caption="Status" type="string" backgroundcolor="" textcolor="" primary-key="" readonly="true" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                </wm-grid> 
+            </wm-panel> 
+            <wm-prefab prefabname="GoogleOAuth" name="GoogleOAuth1" show="false"></wm-prefab> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

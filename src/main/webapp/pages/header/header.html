@@ -1,0 +1,23 @@
+<wm-partial data-ng-controller="headerPageController" name="header" type="header"> 
+    <wm-navbar name="navbar1" imgsrc="resources/images/imagelists/flipfolio_logo.png" title="Vacation Management"> 
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left"> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor on-click="Variables.goToPage_Main.invoke()" caption="Home" name="homeButton" show="true" textalign="left" accessroles="admin" padding="unset unset unset 0px"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor on-click="Variables.goToPage_LeavesPage.invoke()" caption="My Vacations" name="orderButton" iconclass="fa fa-plane"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor on-click="Variables.goToPage_Employees.invoke()" caption="Employees" name="helpButton" iconclass="fa fa-group" accessroles="admin"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right"> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor caption="Profile" name="profileButton" iconclass="fa fa-user" on-click="Variables.goToPage_Profile.invoke()"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor caption="Logout" name="logoutButton" iconclass="fa fa-sign-out" on-click="Variables.logoutVariable.invoke()"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+    </wm-navbar> 
+</wm-partial>

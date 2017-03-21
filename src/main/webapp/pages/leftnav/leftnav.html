@@ -1,0 +1,14 @@
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="left-panel"> 
+    <wm-nav name="leftnavigation" type="pills" layout="stacked"> 
+        <wm-nav-item name="list_latestUpdate"> 
+            <wm-anchor caption="My Vacations" name="dashboardButton" iconclass="glyphicon glyphicon-dashboard" on-click="Variables.goToPage_LeavesPage.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_inTheNews"> 
+            <wm-anchor caption="Manage Requests" name="porderButton" iconclass="glyphicon glyphicon-file" on-click="Variables.goToPage_LeaveManagement.invoke()" accessroles="admin"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_share"> 
+            <wm-anchor caption="Team Calendar" name="inventoryButton" iconclass="glyphicon glyphicon-tags" on-click="Variables.goToPage_TeamCalendar.invoke()" show="true"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_help"></wm-nav-item> 
+    </wm-nav> 
+</wm-partial>

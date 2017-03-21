@@ -1,0 +1,273 @@
+{
+  "acceptLeave" : {
+    "name" : "acceptLeave",
+    "description" : "No description is provided",
+    "version" : "V1",
+    "queryString" : "update Vacation set status = 'A' where id =:id",
+    "countQueryString" : null,
+    "nativeSql" : false,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : null,
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "AcceptLeaveRequest",
+      "method" : "PUT"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "cntPendingQuery" : {
+    "name" : "cntPendingQuery",
+    "description" : "No description is provided",
+    "version" : "V1",
+    "queryString" : "select count(*) as cntPendingReqs from Vacation v, Employee e where v.employee.eid = e.eid and v.status = 'P'",
+    "countQueryString" : "select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and v.status = 'P'",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.hrdb.models.query.CntPendingQueryResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "cntPendingReqs",
+        "fieldName" : "cntPendingReqs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "pendingVacationRequests" : {
+    "name" : "pendingVacationRequests",
+    "description" : "No description is provided",
+    "version" : "V1",
+    "queryString" : "select v.employee.firstname as fname, v.employee.lastname as lname , v.employee.eid as eid,v.startdate as startdate, v.enddate as enddate, v.status as status, v.id as id from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status = 'P'",
+    "countQueryString" : "select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status = 'P'",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "5",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.hrdb.models.query.PendingVacationRequestsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "id",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "lname",
+        "fieldName" : "lname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "startdate",
+        "fieldName" : "startdate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "status",
+        "fieldName" : "status",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Character",
+          "list" : false
+        }
+      }, {
+        "name" : "enddate",
+        "fieldName" : "enddate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "eid",
+        "fieldName" : "eid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "fname",
+        "fieldName" : "fname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "rejectLeave" : {
+    "name" : "rejectLeave",
+    "description" : "No description is provided",
+    "version" : "V1",
+    "queryString" : "update Vacation set status = 'R' where id =:id",
+    "countQueryString" : null,
+    "nativeSql" : false,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "RejectLeaveRequest",
+      "method" : "PUT"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "vacationRequests" : {
+    "name" : "vacationRequests",
+    "description" : "No description is provided",
+    "version" : "V1",
+    "queryString" : "select v.employee.firstname as fname, v.employee.lastname as lname , v.employee.eid as eid,v.startdate as startdate, v.enddate as enddate, v.status as status, v.id as id from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status != 'P'",
+    "countQueryString" : "select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status != 'P'",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.hrdb.models.query.VacationRequestsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "id",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "lname",
+        "fieldName" : "lname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "startdate",
+        "fieldName" : "startdate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "status",
+        "fieldName" : "status",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Character",
+          "list" : false
+        }
+      }, {
+        "name" : "enddate",
+        "fieldName" : "enddate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "eid",
+        "fieldName" : "eid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "fname",
+        "fieldName" : "fname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

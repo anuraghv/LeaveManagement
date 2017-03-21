@@ -1,0 +1,87 @@
+<wm-page name="page1" data-ng-controller="LeavesPagePageController"> 
+    <wm-header name="header1" content="header"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content name="page_content1" columnwidth="10"> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow name="gridrow2"> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn2_1" padding=".5em"> 
+                        <wm-tile backgroundcolor="#aeeae2" horizontalalign="center" on-click="Variables.goToPage_LeaveManagement.invoke()" name="tile1" borderwidth="1px" padding="1em"> 
+                            <wm-label caption="Vacations Days Remaining" class="text-uppercase h3" textalign="center" name="label4" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="9" class="h2" on-click="Variables.goToPage_LeaveManagement.invoke()" textalign="center" name="label5"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn3" padding=".5em"> 
+                        <wm-tile backgroundcolor="#aed5ea" horizontalalign="center" name="tile2" borderwidth="1px" padding="1em"> 
+                            <wm-label caption="Approved Vacations" class="text-uppercase h3" textalign="center" name="label6_1" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="3" class="h2" textalign="center" name="label7_1"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn4" padding=".5em"> 
+                        <wm-tile backgroundcolor="#fff3bf" horizontalalign="center" name="tile3" borderwidth="1px" padding="1em"> 
+                            <wm-label width="100%" caption="Vacations Declined" class="text-uppercase h3" textalign="center" name="label8_1" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="1" class="h2" textalign="center" name="label9"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow1"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn2"> 
+                        <wm-accordion name="accordion1"> 
+                            <wm-accordionpane name="accordionpane1" heading="Current Vacation Requests" class="panel-default"> 
+                                <wm-grid dataset="bind:Variables.pendingLeaves.dataSet" name="grid2" readonlygrid="true" class="panel-default"> 
+                                    <wm-grid-column binding="startdate" caption="Start" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="enddate" caption="End" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="status" caption="Status" type="character" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                </wm-grid> 
+                            </wm-accordionpane> 
+                            <wm-accordionpane name="accordionpane2" heading="Vacations Taken" class="panel-default"> 
+                                <wm-grid dataset="bind:Variables.approvedLeaves.dataSet" name="grid3" readonlygrid="true" shownavigation="false" class="panel-default"> 
+                                    <wm-grid-column binding="startdate" caption="Start" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="enddate" caption="End" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="status" caption="Status" type="character" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                </wm-grid> 
+                            </wm-accordionpane> 
+                            <wm-accordionpane name="accordionpane3" heading="Vacations Declined" class="panel-default"> 
+                                <wm-grid dataset="bind:Variables.rejectedLeaves.dataSet" name="grid4" readonlygrid="true" shownavigation="false" class="panel-default"> 
+                                    <wm-grid-column binding="startdate" caption="Start" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="enddate" caption="End" type="date" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Enter date in yyyy-mm-dd" datepattern="yyyy-MM-dd" formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                    <wm-grid-column binding="status" caption="Status" type="character" backgroundcolor="" textcolor="" primary-key="" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column> 
+                                </wm-grid> 
+                            </wm-accordionpane> 
+                        </wm-accordion> 
+                        <wm-button on-click="Widgets.dialog1.open()" name="button2" class="btn-primary" caption="Request Vacation" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer1" content="footer"></wm-footer> 
+    <wm-view show="false" name="view1" class="dialog-view"> 
+        <wm-dialog width="320" closable="true" name="dialog1" dialogtype="design-dialog" modal="true" title="Apply for Leave" iconclass="glyphicon glyphicon-edit"> 
+            <wm-form name="form1" class="app-dialog-form"> 
+                <wm-composite name="composite3"> 
+                    <wm-label caption="Start Date" name="label6" class="col-md-3"></wm-label> 
+                    <wm-container name="container2" class="col-md-9"> 
+                        <wm-date name="date2"></wm-date> 
+                    </wm-container> 
+                </wm-composite> 
+                <wm-composite name="composite4"> 
+                    <wm-label caption="End Date" name="label7" class="col-md-3"></wm-label> 
+                    <wm-container name="container3" class="col-md-9"> 
+                        <wm-date name="date3" excludedays="0,6"></wm-date> 
+                    </wm-container> 
+                </wm-composite> 
+                <wm-composite name="composite5"> 
+                    <wm-label caption="Reason" name="label8" class="col-md-3"></wm-label> 
+                    <wm-container name="container4" class="col-md-9"> 
+                        <wm-select dataset="bind:Variables.typesOfLeave.dataSet" name="select1" datafield="dataValue" datavalue="Vacation"></wm-select> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-form> 
+            <wm-dialogactions name="dialogactions1"> 
+                <wm-button name="button2_1" class="btn-secondary" caption="Cancel" on-click="closeDialog()"></wm-button> 
+                <wm-button on-click="Variables.createLeave.createRecord();Widgets.dialog1.close()" name="button3" class="btn-primary" caption="Apply"></wm-button> 
+            </wm-dialogactions> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

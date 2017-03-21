@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="GoogleAddEvent" type="RestService" springFile="GoogleAddEvent.spring.xml">
+    <operation name="invoke">
+        <parameter name="Authorization" typeRef="java.lang.String" isList="false"/>
+        <parameter name="RequestBody" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="GoogleAddEvent.RootResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="GoogleAddEvent.RootRequest" name="RootRequest" supportsQuickData="false">
+            <element name="summary" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="start" typeRef="GoogleAddEvent.start" isList="false" allowNull="false"/>
+            <element name="end" typeRef="GoogleAddEvent.end" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.RootResponse" name="RootResponse" supportsQuickData="false">
+            <element name="summary" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reminders" typeRef="GoogleAddEvent.reminders" isList="false" allowNull="false"/>
+            <element name="etag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="organizer" typeRef="GoogleAddEvent.organizer" isList="false" allowNull="false"/>
+            <element name="kind" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="creator" typeRef="GoogleAddEvent.creator" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="start" typeRef="GoogleAddEvent.start" isList="false" allowNull="false"/>
+            <element name="updated" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="created" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="hangoutLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="iCalUID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="end" typeRef="GoogleAddEvent.end" isList="false" allowNull="false"/>
+            <element name="htmlLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.reminders" name="reminders" supportsQuickData="false">
+            <element name="useDefault" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.creator" name="creator" supportsQuickData="false">
+            <element name="email" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="displayName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.end" name="end" supportsQuickData="false">
+            <element name="date" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.organizer" name="organizer" supportsQuickData="false">
+            <element name="email" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="self" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="displayName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="GoogleAddEvent.start" name="start" supportsQuickData="false">
+            <element name="date" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

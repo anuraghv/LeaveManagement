@@ -1,0 +1,198 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "/maps",
+  "paths" : {
+    "/api/geocode/json" : {
+      "x-WM-BASE_PATH" : "/api/geocode/json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "description" : "address",
+          "name" : "address",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "GeoCode_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.GeoCode.scheme}://${rest.GeoCode.host}${rest.GeoCode.basepath}/api/geocode/json"
+    }
+  },
+  "host" : "maps.googleapis.com",
+  "schemes" : [ "https" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "results" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/resultsEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "results", "status" ]
+    },
+    "viewport" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.viewport",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "southwest" : {
+          "$ref" : "#/definitions/southwest"
+        },
+        "northeast" : {
+          "$ref" : "#/definitions/northeast"
+        }
+      },
+      "required" : [ "northeast", "southwest" ]
+    },
+    "location" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "lng" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "lat" : {
+          "format" : "double",
+          "type" : "number"
+        }
+      },
+      "required" : [ "lat", "lng" ]
+    },
+    "resultsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.resultsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "place_id" : {
+          "type" : "string"
+        },
+        "address_components" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/address_componentsEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "formatted_address" : {
+          "type" : "string"
+        },
+        "types" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "geometry" : {
+          "$ref" : "#/definitions/geometry"
+        }
+      },
+      "required" : [ "address_components", "formatted_address", "geometry", "place_id", "types" ]
+    },
+    "address_componentsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.address_componentsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "long_name" : {
+          "type" : "string"
+        },
+        "types" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "short_name" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "long_name", "short_name", "types" ]
+    },
+    "southwest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.southwest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "lng" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "lat" : {
+          "format" : "double",
+          "type" : "number"
+        }
+      },
+      "required" : [ "lat", "lng" ]
+    },
+    "northeast" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.northeast",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "lng" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "lat" : {
+          "format" : "double",
+          "type" : "number"
+        }
+      },
+      "required" : [ "lat", "lng" ]
+    },
+    "geometry" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GeoCode.geometry",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "viewport" : {
+          "$ref" : "#/definitions/viewport"
+        },
+        "location_type" : {
+          "type" : "string"
+        },
+        "location" : {
+          "$ref" : "#/definitions/location"
+        }
+      },
+      "required" : [ "location", "location_type", "viewport" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "864e93a5-a241-48f6-b02c-088cff4d8e62",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "googleapis",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

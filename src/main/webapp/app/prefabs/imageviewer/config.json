@@ -1,0 +1,35 @@
+{
+  "displayName" : "imageviewer",
+  "group" : "Media",
+  "templateUrl" : "/pages/Main/Main.html",
+  "controllerUrl" : "/pages/Main/Main.js",
+  "variablesUrl" : "/pages/Main/Main.variables.json",
+  "iconUrl" : "/resources/images/imagelists/lightboxgroupicon.png",
+  "resources" : {
+    "styles" : [ "/resources/lightbox/css/lightbox.min.css" ],
+    "scripts" : [ "/resources/lightbox/js/lightbox.min.js" ],
+    "modules" : [ ]
+  },
+  "properties" : {
+    "pic" : {
+      "type" : "string",
+      "displayName" : "Picture",
+      "helpText" : "Please provide the URL of the picture",
+      "bindable" : "in-bound",
+      "value" : "http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "title" : {
+      "type" : "string",
+      "displayName" : "Title",
+      "helpText" : "Image Title",
+      "bindable" : "in-bound",
+      "value" : "Image",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  }
+}

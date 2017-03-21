@@ -1,0 +1,13 @@
+
+@media only screen and (max-width: 480px) and (min-width: 299px) {
+    .wm-app .app-datagrid {
+        display: block;
+    }
+    .wm-app .app-datagrid .table-container {
+        width: 150%;
+    }
+    .wm-app .app-datagrid .app-grid-content {
+        overflow: auto;
+        height: auto !important;
+    } 
+}

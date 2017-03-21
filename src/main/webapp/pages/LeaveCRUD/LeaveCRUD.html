@@ -1,0 +1,57 @@
+<wm-page name="page1" data-ng-controller="LeaveCRUDPageController"> 
+    <wm-content name="content1"> 
+        <wm-page-content name="page_content1" columnwidth="12"> 
+            <wm-livegrid service="hrdb@Vacation" name="VacationLivegrid1"> 
+                <wm-grid dataset="bind:Variables.HrdbVacationData.dataSet" name="VacationGrid1" deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" class="panel-default"> 
+                    <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="startdate" caption="Startdate" type="date" readonly="false" datepattern="yyyy-MM-dd" formatpattern="toDate" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="enddate" caption="Enddate" type="date" readonly="false" datepattern="yyyy-MM-dd" formatpattern="toDate" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="tenantid" caption="Tenantid" type="integer" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="status" caption="Status" type="character" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="employee.eid" caption="Employee Eid" type="integer" primary-key="true" generator="identity" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="employee.firstname" caption="Employee Firstname" type="string" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="employee.lastname" caption="Employee Lastname" type="string" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="employee.street" caption="Employee Street" type="string" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-column binding="employee.city" caption="Employee City" type="string" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column> 
+                    <wm-grid-action key="addNewRow" label="New" value="new" icon="new" show="true" class="btn-primary" action="addNewRow()"></wm-grid-action> 
+                </wm-grid> 
+                <wm-liveform formtype="inline" dataset="bind:Variables.HrdbVacationData.dataSet" name="VacationLiveform1" novalidate="false" title="Details" class="panel-default"> 
+                    <wm-layoutgrid name="layoutgrid1"> 
+                        <wm-gridrow show="hide" name="gridrow1"> 
+                            <wm-gridcolumn show="show" name="gridcolumn1" columnwidth="12"> 
+                                <wm-form-field display-name="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" readonly="true" required="true"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow show="show" name="gridrow2"> 
+                            <wm-gridcolumn show="show" name="gridcolumn2" columnwidth="12"> 
+                                <wm-form-field display-name="Startdate" show="true" primary-key="false" generator="null" key="startdate" type="date" is-related="false" readonly="false" required="false"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow show="show" name="gridrow3"> 
+                            <wm-gridcolumn show="show" name="gridcolumn3" columnwidth="12"> 
+                                <wm-form-field display-name="Enddate" show="true" primary-key="false" generator="null" key="enddate" type="date" is-related="false" readonly="false" required="false"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow show="show" name="gridrow4"> 
+                            <wm-gridcolumn show="show" name="gridcolumn4" columnwidth="12"> 
+                                <wm-form-field display-name="Employee" show="true" primary-key="false" generator="assigned" key="employee" type="list" is-related="true" readonly="false" required="true" related-field-name="street"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow show="show" name="gridrow5"> 
+                            <wm-gridcolumn show="show" name="gridcolumn5" columnwidth="12"> 
+                                <wm-form-field display-name="Tenantid" show="true" primary-key="false" generator="null" key="tenantid" type="integer" is-related="false" readonly="false" required="false"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow show="show" name="gridrow6"> 
+                            <wm-gridcolumn show="show" name="gridcolumn6" columnwidth="12"> 
+                                <wm-form-field display-name="Status" show="true" primary-key="false" generator="null" key="status" type="character" maxvalue="1" is-related="false" readonly="false" required="false"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action> 
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="Submit" update-mode="true"></wm-form-action> 
+                </wm-liveform> 
+            </wm-livegrid> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

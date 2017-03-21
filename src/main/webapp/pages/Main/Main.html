@@ -1,0 +1,77 @@
+<wm-page data-ng-controller="MainPageController" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-layoutgrid name="layoutgrid2" width="100%"> 
+                <wm-gridrow name="gruidrow4" padding="unset unset 1em unset"> 
+                    <wm-gridcolumn name="gridcolumn10" columnwidth="3" padding=".5em"> 
+                        <wm-tile name="tile1" backgroundcolor="#aeeae2" horizontalalign="center" on-click="Variables.goToPage_LeaveManagement.invoke()" borderwidth="1px" padding="1em"> 
+                            <wm-label caption="Pending Requests" name="label2" class="text-uppercase h3" textalign="center" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="bind:Variables.HrdbExecuteCntPendingQuery.dataSet[$i].cntPendingReqs" name="label3" class="h2" on-click="Variables.goToPage_LeaveManagement.invoke()" textalign="center"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn25" columnwidth="3" padding=".5em"> 
+                        <wm-tile name="tile10" backgroundcolor="#aed5ea" horizontalalign="center" borderwidth="1px" padding="1em"> 
+                            <wm-label caption="Approved Requests" class="text-uppercase h3" name="label40" textalign="center" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="20" class="h2" name="label41" textalign="center" on-click="label41Click($event, $scope)"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn35" columnwidth="3" padding=".5em"> 
+                        <wm-tile name="tile11" backgroundcolor="#fff3bf" horizontalalign="center" borderwidth="1px" padding="1em"> 
+                            <wm-label width="100%" caption="Rejected Requests" class="text-uppercase h3" name="label43" textalign="center" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="3" class="h2" name="label44" textalign="center"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn40" columnwidth="3" padding=".5em"> 
+                        <wm-tile name="tile12" backgroundcolor="#d5283d" color="#fff" borderwidth="1px" padding="1em"> 
+                            <wm-label width="100%" caption="Employees" class="text-uppercase h3" name="label46" textalign="center" margin="0em unset"></wm-label> 
+                            <wm-label paddingunit="em" width="100%" caption="10" class="h2" name="label47_1" textalign="center"></wm-label> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow12"> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn18" padding="unset .5em"> 
+                        <wm-panel class="panel-default" name="panel1" title="Vacations Outstanding" iconclass="fa fa-plane"> 
+                            <wm-panel-footer name="panel_footer1"></wm-panel-footer> 
+                            <wm-chart type="Bar" name="chart2" theme="Terrestrial" xaxisdatakey="firstname" yaxisdatakey="leavesremaining" height="350px" dataset="bind:Variables.lvEmpsRemainingVacations.dataSet" orderby="firstname:desc" showlegend="false" captions="false" offsettop="20" on-select="chart2Select($event, $scope, selectedItem, selectedChartItem)" on-transform="chart2Transform($event, $scope)"></wm-chart> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn19" padding="unset .5em"> 
+                        <wm-panel class="panel-default" name="panel2" title="Team Calendar" iconclass="fa fa-calendar"> 
+                            <wm-panel-footer name="panel_footer2"></wm-panel-footer> 
+                            <wm-iframe name="iframe1" iframesrc="https://calendar.google.com/calendar/embed?src=wavemaker.com_ns4nmla5jpm7afdroca52hjpjk%40group.calendar.google.com&amp;ctz=America/Los_Angeles" height="350px" width="100%"></wm-iframe> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow11"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn16" padding="unset .5em"> 
+                        <wm-panel class="panel-default" name="panel3" title="Team" iconclass="fa fa-group"> 
+                            <wm-panel-footer name="panel_footer3"></wm-panel-footer> 
+                            <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" dataset="bind:Variables.lvScrollableEmployees.dataSet" name="livelist1" navigation="Scroll" on-click="Variables.goToPage_Profile.invoke()"> 
+                                <wm-listtemplate layout="inline" name="listtemplate1"> 
+                                    <wm-layoutgrid class="inline" name="layoutgrid7"> 
+                                        <wm-gridrow name="gridrow13"> 
+                                            <wm-gridcolumn class="text-center col-xs-3" columnwidth="1" data-template-ctr="true" name="gridcolumn22"> 
+                                                <wm-picture width="24pt" height="24pt" name="Picture" shape="circle" picturesource="bind:Variables.lvScrollableEmployees.dataSet.data[$i].picurl"></wm-picture> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn class="col-xs-9" name="gridcolumn23"> 
+                                                <wm-gridcolumn columnwidth="3" data-template-ctr="true" class="col-xs-12" name="gridcolumn24"> 
+                                                    <wm-label name="Firstname" width="100%" caption="bind:Variables.lvScrollableEmployees.dataSet.data[$i].firstname + ' ' + Variables.lvScrollableEmployees.dataSet.data[$i].lastname"></wm-label> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="4" data-template-ctr="true" class="col-xs-12" name="gridcolumn29"> 
+                                                    <wm-label name="City" width="100%" caption="bind:Variables.lvScrollableEmployees.dataSet.data[$i].street + ' ' + Variables.lvScrollableEmployees.dataSet.data[$i].city + ' ' + Variables.lvScrollableEmployees.dataSet.data[$i].state + ' ' + Variables.lvScrollableEmployees.dataSet.data[$i].zip"></wm-label> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-listtemplate> 
+                            </wm-livelist> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow23"></wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

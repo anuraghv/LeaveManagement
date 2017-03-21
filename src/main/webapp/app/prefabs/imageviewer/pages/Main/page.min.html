@@ -1,0 +1,57 @@
+<style id="Main.css">
+</style>
+<script id="Main.js">
+Application.$controller("ImageviewerController", ["$scope", function ($scope) {
+	"use strict";
+
+	/* 
+	 * This function will be invoked when any of this prefab's property is changed
+	 * @key: property name
+	 * @newVal: new value of the property
+	 * @oldVal: old value of the property
+	 */
+	function propertyChangeHandler(key, newVal, oldVal) {
+		/*
+		switch (key) {
+			case "prop1":
+				// do something with newVal for property 'prop1'
+				break;
+			case "prop2":
+				// do something with newVal for property 'prop2'
+				break;
+		}
+		*/
+	}
+	/* register the property change handler */
+	$scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+	$scope.onInitPrefab = function() {
+		// this method will be triggered post initialization of the prefab.
+	}
+}]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page data-ng-controller="ImageviewerController" name="page1">
+    <wm-content name="content1">
+        <a href="{{pic}}" data-lightbox="image-1" data-title="{{title}}">
+            <wm-picture name="picture1" hint="bind:title" picturesource="bind:pic"></wm-picture>
+        </a>
+    </wm-content>
+</wm-page>
+</script>

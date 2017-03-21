@@ -1,0 +1,80 @@
+{
+  "tags" : [ {
+    "description" : "WebSocket service swagger documentation",
+    "name" : "WebSocketServiceVirtualController"
+  } ],
+  "basePath" : "${websocket.wavemakeronline.basepath}",
+  "paths" : {
+    "/chatroom" : {
+      "x-WM-BASE_PATH" : "/chatroom",
+      "x-WM-TAG" : "WebSocketServiceVirtualController",
+      "get" : {
+        "tags" : [ "WebSocketServiceVirtualController" ],
+        "x-WM-OUT-PARAMS-TYPE" : [ "#/definitions/RootResponse" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "security" : [ {
+          "WM_WebSocket_Service_Authorization" : [ ]
+        } ],
+        "parameters" : [ {
+          "description" : "username",
+          "name" : "username",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "x-WM-IN-PARAMS-TYPE" : [ "#/definitions/RootRequest" ],
+        "operationId" : "wavemakeronline_WebSocketServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${websocket.wavemakeronline.scheme}://${websocket.wavemakeronline.host}${websocket.wavemakeronline.basepath}/chatroom"
+    }
+  },
+  "host" : "${websocket.wavemakeronline.host}",
+  "schemes" : [ "${websocket.wavemakeronline.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline.RootResponse",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "time" : {
+          "format" : "int64",
+          "type" : "integer"
+        },
+        "username" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline.RootRequest",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "time" : {
+          "format" : "int64",
+          "type" : "integer"
+        },
+        "username" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "WebSocketService",
+    "x-WM-API_ID" : "f0f3c6b8-8da3-4e92-a8df-c7aad8d204cb",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "wavemakeronline",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

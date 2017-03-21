@@ -1,0 +1,73 @@
+[ {
+  "name" : "ChatPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "EmployeeListPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Employees",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LeaveCRUD",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LeaveManagement",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LeavesPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MarketingPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Profile",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "SheetPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TeamCalendar",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "PARTIAL",
+  "params" : [ ]
+} ]

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <query name="pendingVacationRequests">
+        <![CDATA[
+        select v.employee.firstname as fname, v.employee.lastname as lname , v.employee.eid as eid,v.startdate as startdate, v.enddate as enddate, v.status as status, v.id as id from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status = 'P'
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+
+    <query name="pendingVacationRequests__count">
+        <![CDATA[
+        select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status = 'P'
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+
+    <query name="cntPendingQuery">
+        <![CDATA[
+        select count(*) as cntPendingReqs from Vacation v, Employee e where v.employee.eid = e.eid and v.status = 'P'
+        ]]>
+    </query>
+
+    <query name="cntPendingQuery__count">
+        <![CDATA[
+        select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and v.status = 'P'
+        ]]>
+    </query>
+
+    <query name="rejectLeave">
+        <![CDATA[
+        update Vacation set status = 'R' where id =:id
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+
+    <query name="vacationRequests">
+        <![CDATA[
+        select v.employee.firstname as fname, v.employee.lastname as lname , v.employee.eid as eid,v.startdate as startdate, v.enddate as enddate, v.status as status, v.id as id from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status != 'P'
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+
+    <query name="vacationRequests__count">
+        <![CDATA[
+        select count(*)  from Vacation v, Employee e where v.employee.eid = e.eid and e.eid = :id and v.status != 'P'
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+
+    <query name="acceptLeave">
+        <![CDATA[
+        update Vacation set status = 'A' where id =:id
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </query>
+</hibernate-mapping>

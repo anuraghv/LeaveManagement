@@ -1,0 +1,30 @@
+{
+  "svPostEvent" : {
+    "_id" : "wm-svPostEvent-wm.ServiceVariable-1468272619088",
+    "name" : "svPostEvent",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "Authorization",
+      "value" : "bind:\"Bearer \"+Widgets.GoogleOAuth1.accesstoken",
+      "type" : "string"
+    } ],
+    "type" : "GoogleAddEvent.RootResponse",
+    "service" : "GoogleAddEvent",
+    "operation" : "invoke",
+    "operationId" : "GoogleAddEvent_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

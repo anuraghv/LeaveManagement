@@ -1,0 +1,30 @@
+{
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "endpointAddress" : "https://maps.googleapis.com/maps/api/geocode/json",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : {
+    "address" : "1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+  },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":[{\"address_components\":[{\"long_name\":\"1600\",\"short_name\":\"1600\",\"types\":[\"street_number\"]},{\"long_name\":\"Amphitheatre Parkway\",\"short_name\":\"Amphitheatre Pkwy\",\"types\":[\"route\"]},{\"long_name\":\"Mountain View\",\"short_name\":\"Mountain View\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Santa Clara County\",\"short_name\":\"Santa Clara County\",\"types\":[\"administrative_area_level_2\",\"political\"]},{\"long_name\":\"California\",\"short_name\":\"CA\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"United States\",\"short_name\":\"US\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"94043\",\"short_name\":\"94043\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA\",\"geometry\":{\"location\":{\"lat\":37.4223582,\"lng\":-122.0844464},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":37.4237071802915,\"lng\":-122.0830974197085},\"southwest\":{\"lat\":37.4210092197085,\"lng\":-122.0857953802915}}},\"place_id\":\"ChIJ2eUgeAK6j4ARbn5u_wAGqWA\",\"types\":[\"street_address\"]}],\"status\":\"OK\"}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "Alt-Svc" : [ "quic=\":443\"; ma=2592000; v=\"35,34\"" ],
+      "Date" : [ "Wed, 25 Jan 2017 19:53:00 GMT" ],
+      "Vary" : [ "Accept-Language" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Expires" : [ "Thu, 26 Jan 2017 19:53:00 GMT" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Type" : [ "application/json; charset=UTF-8" ],
+      "Server" : [ "mafe" ],
+      "Cache-Control" : [ "public, max-age=86400" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null
+}

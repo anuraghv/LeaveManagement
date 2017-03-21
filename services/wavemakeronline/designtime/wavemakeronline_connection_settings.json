@@ -1,0 +1,17 @@
+{
+  "endpointAddress" : "wss://websocket-demos.wavemakeronline.com:443/websocket/chatroom",
+  "method" : "GET",
+  "contentType" : "",
+  "sampleRequestBody" : "{\"username\":\"eric\",\"message\":\"hi\",\"time\":1481692192741}",
+  "authType" : "NONE",
+  "headers" : { },
+  "queryParams" : {
+    "username" : "eric"
+  },
+  "sampleWebSocketResponse" : {
+    "responseBody" : "{\"username\":\"eric\",\"message\":\"{\\\"username\\\":\\\"eric\\\",\\\"message\\\":\\\"hi\\\",\\\"time\\\":1481692192741}\",\"time\":1485396402857}",
+    "convertedResponse" : null,
+    "statusCode" : 0,
+    "contentType" : ""
+  }
+}

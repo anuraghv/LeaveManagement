@@ -1,0 +1,19 @@
+{
+  "modelName" : "hrdb",
+  "entityName" : "Employee",
+  "tableName" : "EMPLOYEE",
+  "unamePropertyName" : "username",
+  "unameColumnName" : "USERNAME",
+  "uidPropertyName" : "eid",
+  "uidColumnName" : "EID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "PASSWORD",
+  "rolePropertyName" : "",
+  "roleColumnName" : "",
+  "useRolesQuery" : true,
+  "rolesByUsernameQuery" : "SELECT EID, ROLE FROM EMPLOYEE WHERE USERNAME = ?",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "SQL"
+}

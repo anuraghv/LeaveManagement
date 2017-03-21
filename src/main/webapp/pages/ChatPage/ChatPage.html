@@ -1,0 +1,65 @@
+<wm-page data-ng-controller="ChatPagePageController" pagetitle="Chat Page" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="page_content1"> 
+            <wm-fileupload name="fileupload2" service="FileService" operation="uploadFile" show="false"></wm-fileupload> 
+            <wm-layoutgrid name="layoutgrid3"> 
+                <wm-gridrow name="gridrow4"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7"> 
+                        <wm-container name="container6" borderstyle="groove" bordercolor="#b9aba7" class="roundededge" padding="5px" borderwidth="1px"> 
+                            <wm-container name="chatcontent" overflow="auto" class="chatcontent" height="600px"> 
+                                <wm-livelist itemclass="bind:item.username === Variables.loggedInUser.dataSet.name? &quot;clearfix mine&quot; : &quot;clearfix&quot;" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list chat" dataset="bind:Variables.chatroom.dataSet" navigation="None" name="chatmessageList" nodatamessage="Start Chat by entering message" listclass="list-group"> 
+                                    <wm-listtemplate layout="inline" name="listtemplate1"> 
+                                        <wm-container class="popover media-body" name="container5"> 
+                                            <wm-prefab prefabname="imageviewer" name="imageviewer1" height="100px" show="bind:Variables.chatroom.dataSet.message.startsWith(&quot;http&quot;)" pic="bind:Variables.chatroom.dataSet.message.startsWith(&quot;http&quot;)?Variables.chatroom.dataSet.message:&quot;&quot;"></wm-prefab> 
+                                            <wm-label name="Content" caption="bind:Variables.chatroom.dataSet.message" class="p media-heading" show="bind:!Variables.chatroom.dataSet.message.startsWith('http')"></wm-label> 
+                                            <wm-container class="pull-right" name="container5_1"> 
+                                                <wm-label name="label4" class="small" caption="by " padding="unset 0.5em unset unset"></wm-label> 
+                                                <wm-label name="Name" class="small" caption="bind:Variables.chatroom.dataSet.username"></wm-label> 
+                                                <wm-label name="label4" class="small" caption="at " padding="unset 0.5em unset 1em"></wm-label> 
+                                                <wm-label name="Time" caption="bind:Variables.chatroom.dataSet.time | toDate: 'hh:mm:ss a'" class="small"></wm-label> 
+                                            </wm-container> 
+                                        </wm-container> 
+                                        <wm-container class="media-right" name="container4"> 
+                                            <wm-picture name="userImage" width="24pt" height="24pt" picturesource="bind:picUrls[Widgets.chatmessageList.currentItem.username]" shape="circle" margin="1em unset unset unset" class="userpic"></wm-picture> 
+                                        </wm-container> 
+                                    </wm-listtemplate> 
+                                </wm-livelist> 
+                            </wm-container> 
+                            <wm-container name="messageformContainer" backgroundcolor="#efefef" height="40pt"> 
+                                <wm-form errormessage="" captionposition="top" captionalign="left" name="messageForm" on-submit="Variables.chatroom.send();messageFormSubmit($event, $scope, $formData)" class="messgeform" on-success="messageFormSuccess($event, $scope, $data)" on-error="Variables.notificationVariable1.invoke()"> 
+                                    <wm-layoutgrid name="layoutgrid1" height="100%"> 
+                                        <wm-gridrow name="gridrow1" height="100%"> 
+                                            <wm-gridcolumn columnwidth="10" name="gridcolumn1" class="col-xs-10"> 
+                                                <wm-container name="tile1231" class="app-container"> 
+                                                    <wm-text name="message" height="30pt" placeholder="Enter message here" disabled="false" autocomplete="false" updateon="blur" required="false" textalign="left"></wm-text> 
+                                                </wm-container> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn4" class="col-xs-2"> 
+                                                <wm-anchor margin="unset 0.5em" name="anchor1" iconclass="wi wi-attach-file" fontsize="25" caption="" on-click="Widgets.dialog1.open()" textalign="right" iconposition="right" class="small"></wm-anchor> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-form> 
+                            </wm-container> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8"></wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+    <wm-view class="dialog-view" name="view1"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialog1"> 
+            <wm-dialogactions name="dialogactions1"> 
+                <wm-button class="btn-primary" caption="Send" on-click="button2Click($event, $scope);Widgets.dialog1.close();button2Click1($event, $scope)" name="button2"></wm-button> 
+            </wm-dialogactions> 
+            <wm-fileupload name="fileupload3" service="FileService" operation="uploadFile" contenttype=".bmp .gif .jpe .jpeg .jpg .png" on-success="fileupload3Success($event, $scope)"></wm-fileupload> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view class="dialog-view" name="view2"> 
+        <wm-alertdialog name="notificationalertdialog" controller="NotificationDialogController" notificationdialog="alert" message="{{notification.text}}" title="{{notification.title}}" oktext="{{notification.okButtonText}}" alerttype="{{notification.alerttype}}" on-ok="variableOnOk()" on-close="variableOnClose()"></wm-alertdialog> 
+    </wm-view> 
+</wm-page>

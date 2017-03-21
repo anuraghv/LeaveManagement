@@ -1,0 +1,187 @@
+{
+  "basePath" : "/calendar",
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "host" : "www.googleapis.com",
+  "paths" : {
+    "/v3/calendars/wavemaker.com_ns4nmla5jpm7afdroca52hjpjk@group.calendar.google.com/events" : {
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "parameters" : [ {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "items" : {
+            "type" : "string"
+          },
+          "description" : "Authorization",
+          "name" : "Authorization",
+          "x-WM-EDITABLE" : true,
+          "required" : false,
+          "type" : "string",
+          "in" : "header"
+        }, {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "description" : "RequestBody",
+          "name" : "RequestBody",
+          "required" : false,
+          "in" : "body"
+        } ],
+        "consumes" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "GoogleAddEvent_RestServiceVirtualController-invoke"
+      },
+      "x-WM-BASE_PATH" : "/v3/calendars/wavemaker.com_ns4nmla5jpm7afdroca52hjpjk@group.calendar.google.com/events",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "schemes" : [ "https" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "summary" : {
+          "type" : "string"
+        },
+        "start" : {
+          "$ref" : "#/definitions/start"
+        },
+        "end" : {
+          "$ref" : "#/definitions/end"
+        }
+      }
+    },
+    "reminders" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.reminders",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "useDefault" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "summary" : {
+          "type" : "string"
+        },
+        "reminders" : {
+          "$ref" : "#/definitions/reminders"
+        },
+        "etag" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "organizer" : {
+          "$ref" : "#/definitions/organizer"
+        },
+        "kind" : {
+          "type" : "string"
+        },
+        "creator" : {
+          "$ref" : "#/definitions/creator"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "updated" : {
+          "type" : "string"
+        },
+        "start" : {
+          "$ref" : "#/definitions/start"
+        },
+        "sequence" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "iCalUID" : {
+          "type" : "string"
+        },
+        "hangoutLink" : {
+          "type" : "string"
+        },
+        "end" : {
+          "$ref" : "#/definitions/end"
+        },
+        "htmlLink" : {
+          "type" : "string"
+        }
+      }
+    },
+    "start" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.start",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "date" : {
+          "type" : "string"
+        }
+      }
+    },
+    "organizer" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.organizer",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "self" : {
+          "type" : "boolean"
+        },
+        "displayName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "end" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.end",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "date" : {
+          "type" : "string"
+        }
+      }
+    },
+    "creator" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoogleAddEvent.creator",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "displayName" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "e16fdfe6-a94b-4624-a6e3-b0e03428a500",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "googleapis",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}
