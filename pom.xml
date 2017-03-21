@@ -136,8 +136,7 @@
                             <goal>add-resource</goal>
                         </goals>
                         <configuration>
-                            <resources>
-              </resources>
+                            <resources/>
                         </configuration>
                     </execution>
                 </executions>
@@ -178,7 +177,7 @@
                         <configuration>
                             <target>
                                 <ant antfile="${basedir}/build.xml" target="init"/>
-                            </target>
+              </target>
                         </configuration>
                     </execution>
                 </executions>
@@ -233,13 +232,12 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>jks</nonFilteredFileExtension>
-                    </nonFilteredFileExtensions>
+          </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
         </plugins>
@@ -274,6 +272,12 @@
                     <version>${wavemaker.studio.version}</version>
                 </dependency>
             </dependencies>
+        </profile>
+        <profile>
+            <id>Bluemix</id>
+            <properties>
+                <profile.props.file>Bluemix.properties</profile.props.file>
+            </properties>
         </profile>
     </profiles>
     <repositories>
@@ -351,8 +355,8 @@
         </dependencies>
     </dependencyManagement>
     <properties>
-        <spring.version>4.2.0.RELEASE</spring.version>
         <profile.props.file>development.properties</profile.props.file>
+        <spring.version>4.2.0.RELEASE</spring.version>
         <spring.security.version>4.1.2.RELEASE</spring.security.version>
         <wavemaker.studio.version>8.4.1.1</wavemaker.studio.version>
     </properties>
