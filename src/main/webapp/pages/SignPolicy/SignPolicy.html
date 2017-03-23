@@ -1,0 +1,15 @@
+<wm-page data-ng-controller="SignPolicyPageController" pagetitle="Sign Policy" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-grid title="" dataset="bind:Variables.SignatureRequestsToMeInvoke.dataSet.signature_requests[$i].signatures" navigation="Pager" name="grid1">
+                <wm-grid-column binding="signer_email_address" caption="Signer Email Address" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                <wm-grid-column binding="signer_name" caption="Signer Name" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                <wm-grid-column binding="signature_id" caption="Signature Id" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+            </wm-grid>
+            <wm-button class="btn-default" caption="Sign Document" type="button" margin="unset 0.5em" name="button1" on-click="Variables.svGetSigntatureURL.invoke()"></wm-button>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

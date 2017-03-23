@@ -9,12 +9,27 @@
   "roles" : [ ],
   "httpMethod" : null
 }, {
+  "urlPattern" : "/pages/footer/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/header/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/pages/LeaveCRUD/**",
   "permission" : "Authenticated",
   "roles" : [ ],
   "httpMethod" : null
 }, {
   "urlPattern" : "/pages/LeavesPage/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/leftnav/**",
   "permission" : "Authenticated",
   "roles" : [ ],
   "httpMethod" : null
@@ -29,21 +44,6 @@
   "roles" : [ ],
   "httpMethod" : null
 }, {
-  "urlPattern" : "/pages/footer/**",
-  "permission" : "Authenticated",
-  "roles" : [ ],
-  "httpMethod" : null
-}, {
-  "urlPattern" : "/pages/header/**",
-  "permission" : "Authenticated",
-  "roles" : [ ],
-  "httpMethod" : null
-}, {
-  "urlPattern" : "/pages/leftnav/**",
-  "permission" : "Authenticated",
-  "roles" : [ ],
-  "httpMethod" : null
-}, {
   "urlPattern" : "/pages/rightnav/**",
   "permission" : "Authenticated",
   "roles" : [ ],
@@ -53,4 +53,19 @@
   "permission" : "Authenticated",
   "roles" : [ ],
   "httpMethod" : null
+}, {
+  "urlPattern" : "/services/file/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/file/file",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "DELETE"
+}, {
+  "urlPattern" : "/services/file/uploadFile",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
 } ]

@@ -27,7 +27,28 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/GetSignatureURL/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/GoogleAddEvent/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/SignatureRequest/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/SignatureRequestsToMe/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -120,9 +141,13 @@
                         </goals>
                         <configuration>
                             <sources>
+                            
                                 <source>services/FileService/src</source>
                                 <source>services/GeoCode/src</source>
+                                <source>services/GetSignatureURL/src</source>
                                 <source>services/GoogleAddEvent/src</source>
+                                <source>services/SignatureRequest/src</source>
+                                <source>services/SignatureRequestsToMe/src</source>
                                 <source>services/hrdb/src</source>
                                 <source>services/securityService/src</source>
                                 <source>services/wavemakeronline/src</source>

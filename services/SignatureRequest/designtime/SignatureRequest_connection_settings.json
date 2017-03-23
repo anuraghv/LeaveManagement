@@ -1,0 +1,44 @@
+{
+  "endpointAddress" : "https://api.hellosign.com/v3/signature_request/create_embedded",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : {
+    "message" : "testmsg",
+    "file_url[0]" : "http://dev.wavemaker.com/examples/salesrep/Eric-Lin.png",
+    "signers[0][name]" : "Me",
+    "subject" : "testsub",
+    "signers[1][email_address]" : "anurag.parashar@wavemaker.com",
+    "signers[1][name]" : "Me1",
+    "signers[0][email_address]" : "anurag@hillviewtech.com",
+    "client_id" : "bf57d8f5492b4436756ea7393ad67ff2",
+    "test_mode" : "1"
+  },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"signature_request\":{\"signature_request_id\":\"0d3ea55121a0a01b5d3f6fe6244a9adf0a022a50\",\"test_mode\":true,\"title\":\"testsub\",\"original_title\":\"testsub\",\"subject\":\"testsub\",\"message\":\"testmsg\",\"metadata\":{},\"is_complete\":false,\"is_declined\":false,\"has_error\":false,\"custom_fields\":[],\"response_data\":[],\"signing_url\":null,\"signing_redirect_url\":null,\"final_copy_uri\":\"/v3/signature_request/final_copy/0d3ea55121a0a01b5d3f6fe6244a9adf0a022a50\",\"files_url\":\"https://api.hellosign.com/v3/signature_request/files/0d3ea55121a0a01b5d3f6fe6244a9adf0a022a50\",\"details_url\":\"https://app.hellosign.com/home/manage?guid=0d3ea55121a0a01b5d3f6fe6244a9adf0a022a50\",\"requester_email_address\":\"anurag.parashar@wavemaker.com\",\"signatures\":[{\"signature_id\":\"1adf893318bc64fab3ecbdf8ee98618e\",\"has_pin\":false,\"signer_email_address\":\"anurag@hillviewtech.com\",\"signer_name\":\"Me\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null},{\"signature_id\":\"eba6325b844db09cbb07942d99a93c7b\",\"has_pin\":false,\"signer_email_address\":\"anurag.parashar@wavemaker.com\",\"signer_name\":\"Me1\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null}],\"cc_email_addresses\":[]}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Access-Control-Allow-Headers" : [ "Authorization, Origin, X-Requested-With, Content-Type, Accept" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, OPTIONS" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Content-Type" : [ "application/json" ],
+      "Date" : [ "Wed, 22 Mar 2017 23:15:39 GMT" ],
+      "P3P" : [ "CP=\"NOP3PPOLICY\"" ],
+      "Server" : [ "Apache" ],
+      "User-Agent" : [ "HelloSign API" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Ratelimit-Limit" : [ "50" ],
+      "X-Ratelimit-Limit-Remaining" : [ "48" ],
+      "X-Ratelimit-Reset" : [ "1490224540" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Length" : [ "1287" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

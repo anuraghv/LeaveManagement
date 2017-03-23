@@ -1,1 +1,13 @@
-[{"name":"admin","description":null,"roleConfig":{"landingPage":"Main"}},{"name":"user","description":null,"roleConfig":{"landingPage":"LeavesPage"}}]
+[ {
+  "name" : "admin",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "LeavesPage"
+  }
+} ]

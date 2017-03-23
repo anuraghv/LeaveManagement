@@ -1,0 +1,36 @@
+{
+  "endpointAddress" : "https://api.hellosign.com/v3/signature_request/list",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : {
+    "query" : "to:anurag.parashar@gmail.com"
+  },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"list_info\":{\"page\":1,\"num_pages\":1,\"num_results\":2,\"page_size\":20},\"signature_requests\":[{\"signature_request_id\":\"fcba05fd21e40ae444ae44d18a90ad5c10efde43\",\"test_mode\":true,\"title\":\"dfssfdss\",\"original_title\":\"dfssfdss\",\"subject\":\"dfssfdss\",\"message\":\"sdfdsfsd\",\"metadata\":{},\"is_complete\":false,\"is_declined\":false,\"has_error\":false,\"custom_fields\":[],\"response_data\":[],\"signing_url\":null,\"signing_redirect_url\":null,\"final_copy_uri\":\"/v3/signature_request/final_copy/fcba05fd21e40ae444ae44d18a90ad5c10efde43\",\"files_url\":\"https://api.hellosign.com/v3/signature_request/files/fcba05fd21e40ae444ae44d18a90ad5c10efde43\",\"details_url\":\"https://app.hellosign.com/home/manage?guid=fcba05fd21e40ae444ae44d18a90ad5c10efde43\",\"requester_email_address\":\"anurag.parashar@wavemaker.com\",\"signatures\":[{\"signature_id\":\"730bb570a0f3be91fe682dcad5b3c184\",\"has_pin\":false,\"signer_email_address\":\"anurag.parashar@wavemaker.com\",\"signer_name\":\"dfdsfs\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null},{\"signature_id\":\"aa90d73a2064b062cb617d5147fa3b88\",\"has_pin\":false,\"signer_email_address\":\"anurag.parashar@gmail.com\",\"signer_name\":\"dfdsfds\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null}],\"cc_email_addresses\":[]},{\"signature_request_id\":\"606785af58a4f12bbe60ca1c39c67a8abe7496eb\",\"test_mode\":true,\"title\":\"dfdsfd\",\"original_title\":\"dfdsfd\",\"subject\":\"dfdsfd\",\"message\":\"fads\",\"metadata\":{},\"is_complete\":false,\"is_declined\":false,\"has_error\":false,\"custom_fields\":[],\"response_data\":[],\"signing_url\":null,\"signing_redirect_url\":null,\"final_copy_uri\":\"/v3/signature_request/final_copy/606785af58a4f12bbe60ca1c39c67a8abe7496eb\",\"files_url\":\"https://api.hellosign.com/v3/signature_request/files/606785af58a4f12bbe60ca1c39c67a8abe7496eb\",\"details_url\":\"https://app.hellosign.com/home/manage?guid=606785af58a4f12bbe60ca1c39c67a8abe7496eb\",\"requester_email_address\":\"anurag.parashar@wavemaker.com\",\"signatures\":[{\"signature_id\":\"a5226b8b38fd58c10abbc2873ad0bdb2\",\"has_pin\":false,\"signer_email_address\":\"anurag.parashar@wavemaker.com\",\"signer_name\":\"dfdsfs\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null},{\"signature_id\":\"859f6a3ac8c6351578dff6f16c7d43e9\",\"has_pin\":false,\"signer_email_address\":\"anurag.parashar@gmail.com\",\"signer_name\":\"Anurag P\",\"order\":null,\"status_code\":\"awaiting_signature\",\"signed_at\":null,\"last_viewed_at\":null,\"last_reminded_at\":null,\"error\":null}],\"cc_email_addresses\":[]}]}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Access-Control-Allow-Headers" : [ "Authorization, Origin, X-Requested-With, Content-Type, Accept" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, OPTIONS" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Content-Type" : [ "application/json" ],
+      "Date" : [ "Wed, 22 Mar 2017 23:49:13 GMT" ],
+      "P3P" : [ "CP=\"NOP3PPOLICY\"" ],
+      "Server" : [ "Apache" ],
+      "User-Agent" : [ "HelloSign API" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Ratelimit-Limit" : [ "2000" ],
+      "X-Ratelimit-Limit-Remaining" : [ "1998" ],
+      "X-Ratelimit-Reset" : [ "1490226553" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Length" : [ "2643" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

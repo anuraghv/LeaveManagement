@@ -103,6 +103,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_PolicyUpload" : {
+    "_id" : "wm-goToPage_PolicyUpload-wm.NavigationVariable-1490206214964",
+    "name" : "goToPage_PolicyUpload",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "PolicyUpload",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Profile" : {
     "_id" : "wm-goToPage_Profile-wm.NavigationVariable-1454897583802",
     "name" : "goToPage_Profile",
@@ -121,6 +132,17 @@
     "dataBinding" : [ ],
     "operation" : "gotoPage",
     "pageName" : "SheetPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_SignPolicy" : {
+    "_id" : "wm-goToPage_SignPolicy-wm.NavigationVariable-1490206174086",
+    "name" : "goToPage_SignPolicy",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "SignPolicy",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },

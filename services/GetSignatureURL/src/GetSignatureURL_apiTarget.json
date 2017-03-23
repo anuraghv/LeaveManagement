@@ -1,0 +1,74 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.GetSignatureURL.basepath}",
+  "paths" : {
+    "/embedded/sign_url/{signatureid}" : {
+      "x-WM-BASE_PATH" : "/embedded/sign_url/{signatureid}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "signatureid",
+          "type" : "string",
+          "required" : true,
+          "in" : "path"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "GetSignatureURL_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.GetSignatureURL.scheme}://${rest.GetSignatureURL.host}${rest.GetSignatureURL.basepath}/embedded/sign_url/{signatureid}"
+    }
+  },
+  "host" : "${rest.GetSignatureURL.host}",
+  "schemes" : [ "${rest.GetSignatureURL.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GetSignatureURL.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "embedded" : {
+          "$ref" : "#/definitions/embedded"
+        }
+      },
+      "required" : [ "embedded" ]
+    },
+    "embedded" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GetSignatureURL.embedded",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "expires_at" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "sign_url" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "expires_at", "sign_url" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "dbc799d1-12ca-49c8-aee6-4cb366c7c690",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "hellosign",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

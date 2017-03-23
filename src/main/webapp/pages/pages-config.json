@@ -39,11 +39,19 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "PolicyUpload",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Profile",
   "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "SheetPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "SignPolicy",
   "type" : "PAGE",
   "params" : [ ]
 }, {

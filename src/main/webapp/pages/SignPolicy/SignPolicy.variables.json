@@ -1,0 +1,58 @@
+{
+  "SignatureRequestsToMeInvoke" : {
+    "_id" : "wm-SignatureRequestsToMeInvoke-wm.ServiceVariable-1490226373287",
+    "name" : "SignatureRequestsToMeInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "query",
+      "value" : "to:anurag.parashar@wavemaker.com AND complete:false",
+      "type" : "string"
+    } ],
+    "type" : "SignatureRequestsToMe.RootResponse",
+    "service" : "SignatureRequestsToMe",
+    "operation" : "invoke",
+    "operationId" : "SignatureRequestsToMe_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "svGetSigntatureURL" : {
+    "_id" : "wm-svGetSigntatureURL-wm.ServiceVariable-1490227120703",
+    "name" : "svGetSigntatureURL",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "signatureid",
+      "value" : "bind:Widgets.grid1.selecteditem.signature_id",
+      "type" : "string"
+    } ],
+    "type" : "GetSignatureURL.RootResponse",
+    "service" : "GetSignatureURL",
+    "operation" : "invoke",
+    "operationId" : "GetSignatureURL_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onSuccess" : "svGetSigntatureURLonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

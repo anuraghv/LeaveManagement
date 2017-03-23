@@ -6,6 +6,16 @@
     "useSSL" : false,
     "excludedUrls" : null
   },
+  "xssConfig" : {
+    "enforceXssSecurity" : false,
+    "policyFile" : "",
+    "xssFilterStrategy" : "NONE",
+    "policyType" : "IMPORT"
+  },
+  "csrfConfig" : {
+    "enforceCsrfSecurity" : false,
+    "headerName" : "X-WM-XSRF-TOKEN"
+  },
   "authProviders" : [ "DATABASE" ],
   "login" : {
     "type" : "PAGE",

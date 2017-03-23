@@ -1,0 +1,34 @@
+{
+  "endpointAddress" : "https://api.hellosign.com/v3/embedded/sign_url/730bb570a0f3be91fe682dcad5b3c184",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"embedded\":{\"sign_url\":\"https://app.hellosign.com/editor/embeddedSign?signature_id=730bb570a0f3be91fe682dcad5b3c184&token=a629319318b9a57c35b7bc7ae3596113\",\"expires_at\":1490230568}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Access-Control-Allow-Headers" : [ "Authorization, Origin, X-Requested-With, Content-Type, Accept" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, OPTIONS" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Content-Type" : [ "application/json" ],
+      "Date" : [ "Wed, 22 Mar 2017 23:56:08 GMT" ],
+      "P3P" : [ "CP=\"NOP3PPOLICY\"" ],
+      "Server" : [ "Apache" ],
+      "User-Agent" : [ "HelloSign API" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Ratelimit-Limit" : [ "2000" ],
+      "X-Ratelimit-Limit-Remaining" : [ "1998" ],
+      "X-Ratelimit-Reset" : [ "1490226968" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Length" : [ "186" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

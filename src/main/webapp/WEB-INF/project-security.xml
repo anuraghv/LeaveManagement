@@ -22,6 +22,7 @@
         </property>
         <property name="loginConfig" ref="loginConfig"/>
         <property name="rememberMeConfig" ref="rememberMeConfig"/>
+        <property name="csrfConfig" ref="csrfConfig"/>
         <property name="rolesConfig" ref="rolesConfig"/>
     </bean>
     <bean class="com.wavemaker.commons.model.security.SSLConfig" id="sslConfig">
@@ -29,9 +30,9 @@
         <property name="sslPort" value="${general.ssl.port}"/>
     </bean>
     <bean class="com.wavemaker.commons.model.security.XSSConfig" id="xssConfig">
-        <property name="enforceXssSecurity" value="false"/>
+        <property name="enforceXssSecurity" value="${general.xss.enabled}"/>
         <property name="policyFile" value="wm-xss-policies.xml"/>
-        <property name="xssFilterStrategy" value="WHITE_LIST"/>
+        <property name="xssFilterStrategy" value="NONE"/>
     </bean>
     <security:global-method-security pre-post-annotations="enabled" authentication-manager-ref="authenticationManager"/>
     <security:http pattern="/app.css" security="none"/>
@@ -66,6 +67,9 @@
         <security:intercept-url pattern="/pages/leftnav/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/pages/rightnav/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/pages/topnav/**" access="isAuthenticated()"/>
+        <security:intercept-url pattern="/services/file/file" access="isAuthenticated()" method="DELETE"/>
+        <security:intercept-url pattern="/services/file/uploadFile" access="isAuthenticated()" method="POST"/>
+        <security:intercept-url pattern="/services/file/**" access="permitAll"/>
         <security:intercept-url pattern="/services/prefabs/**/servicedefs" access="permitAll"/>
         <security:intercept-url pattern="/services/security/**" access="permitAll"/>
         <security:intercept-url pattern="/services/servicedefs" access="permitAll"/>
@@ -165,7 +169,7 @@
         </property>
     </bean>
     <bean class="com.wavemaker.commons.model.security.CSRFConfig" id="csrfConfig">
-        <property name="enforceCsrfSecurity" value="false"/>
+        <property name="enforceCsrfSecurity" value="${general.xsrf.enabled}"/>
         <property name="headerName" value="X-WM-XSRF-TOKEN"/>
     </bean>
     <bean class="com.wavemaker.commons.model.security.RememberMeConfig" id="rememberMeConfig">

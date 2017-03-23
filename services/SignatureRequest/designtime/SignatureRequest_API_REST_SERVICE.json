@@ -1,0 +1,255 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "d1180e21-49f0-4bc0-bfea-d465d3c1bfe0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "hellosign",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "37bf4320e59ee8035e739570f83c1c1106a8cffe14e5660f3ce2f13a86cb5841:@api.hellosign.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/SignatureRequest/invoke/signature_request/create_embedded" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "SignatureRequest_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "message",
+          "in" : "query",
+          "description" : "message",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "file_url[0]",
+          "in" : "query",
+          "description" : "file_url[0]",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "signers[0][name]",
+          "in" : "query",
+          "description" : "signers[0][name]",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "subject",
+          "in" : "query",
+          "description" : "subject",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "signers[1][email_address]",
+          "in" : "query",
+          "description" : "signers[1][email_address]",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "signers[1][name]",
+          "in" : "query",
+          "description" : "signers[1][name]",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "signers[0][email_address]",
+          "in" : "query",
+          "description" : "signers[0][email_address]",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "client_id",
+          "in" : "query",
+          "description" : "client_id",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "test_mode",
+          "in" : "query",
+          "description" : "test_mode",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/SignatureRequest/invoke/signature_request/create_embedded",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.SignatureRequest.scheme}://${rest.SignatureRequest.host}${rest.SignatureRequest.basepath}/signature_request/create_embedded"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "signature_request" ],
+      "properties" : {
+        "signature_request" : {
+          "$ref" : "#/definitions/signature_request"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "SignatureRequest.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "SignatureRequest.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "signature_request" : {
+      "required" : [ "cc_email_addresses", "custom_fields", "details_url", "files_url", "final_copy_uri", "has_error", "is_complete", "is_declined", "message", "metadata", "original_title", "requester_email_address", "response_data", "signature_request_id", "signatures", "signing_redirect_url", "signing_url", "subject", "test_mode", "title" ],
+      "properties" : {
+        "custom_fields" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "requester_email_address" : {
+          "type" : "string"
+        },
+        "has_error" : {
+          "type" : "boolean"
+        },
+        "is_declined" : {
+          "type" : "boolean"
+        },
+        "subject" : {
+          "type" : "string"
+        },
+        "response_data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "signatures" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/signaturesEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "cc_email_addresses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "test_mode" : {
+          "type" : "boolean"
+        },
+        "is_complete" : {
+          "type" : "boolean"
+        },
+        "signing_url" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "final_copy_uri" : {
+          "type" : "string"
+        },
+        "signing_redirect_url" : {
+          "type" : "string"
+        },
+        "signature_request_id" : {
+          "type" : "string"
+        },
+        "files_url" : {
+          "type" : "string"
+        },
+        "details_url" : {
+          "type" : "string"
+        },
+        "original_title" : {
+          "type" : "string"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/metadata"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "SignatureRequest.signature_request",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "signaturesEntryItem" : {
+      "required" : [ "error", "has_pin", "last_reminded_at", "last_viewed_at", "order", "signature_id", "signed_at", "signer_email_address", "signer_name", "status_code" ],
+      "properties" : {
+        "status_code" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "string"
+        },
+        "error" : {
+          "type" : "string"
+        },
+        "has_pin" : {
+          "type" : "boolean"
+        },
+        "signer_email_address" : {
+          "type" : "string"
+        },
+        "signed_at" : {
+          "type" : "string"
+        },
+        "signer_name" : {
+          "type" : "string"
+        },
+        "signature_id" : {
+          "type" : "string"
+        },
+        "last_viewed_at" : {
+          "type" : "string"
+        },
+        "last_reminded_at" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "SignatureRequest.signaturesEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "metadata" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "SignatureRequest.metadata",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}
