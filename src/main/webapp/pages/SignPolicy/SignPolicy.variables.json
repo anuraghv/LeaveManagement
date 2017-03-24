@@ -19,6 +19,7 @@
     "isList" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onBeforeDatasetReady" : "SignatureRequestsToMeInvokeonBeforeDatasetReady($event, $scope)",
     "startUpdate" : true,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",
@@ -34,7 +35,7 @@
     "category" : "wm.ServiceVariable",
     "dataBinding" : [ {
       "target" : "signatureid",
-      "value" : "bind:Widgets.grid1.selecteditem.signature_id",
+      "value" : "bind:Widgets.label2.caption",
       "type" : "string"
     } ],
     "type" : "GetSignatureURL.RootResponse",

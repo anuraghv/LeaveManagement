@@ -23,24 +23,36 @@ Application.$controller("SignPolicyPageController", ["$scope", function($scope) 
             url: data.embedded.sign_url,
             allowCancel: true,
             messageListener: function(eventData) {
-
                 console.log(eventData);
                 if (eventData.event === 'signature_request_signed') {
-                    alert("HelloSign event received");
                     console.log($scope.Variables.SignatureRequestsToMeInvoke);
                     $scope.Variables.SignatureRequestsToMeInvoke.update();
-                    alert("HelloSign event received after");
                 }
             }
         });
     };
 
+
+    $scope.SignatureRequestsToMeInvokeonBeforeDatasetReady = function(variable, data) {
+        console.log(variable);
+        console.log(data);
+
+        var sr = data.signature_requests;
+        if (sr !== undefined && sr !== null) {
+            for (var i = 0; i < sr.length; i++) {
+                var signs = sr[i].signatures;
+                var newsigns = [];
+                if (signs !== undefined && signs !== null) {
+                    for (var j = 0; j < signs.length; j++) {
+                        if (signs[j].signer_name == 'Eric Lin' && signs[j].status_code == 'awaiting_signature') {
+                            newsigns.push(signs[j]);
+                        }
+                    }
+                    sr[i].signatures = newsigns;
+                }
+            }
+        }
+        console.log(data);
+    };
+
 }]);
-
-
-Application.$controller("grid1Controller", ["$scope",
-    function($scope) {
-        "use strict";
-        $scope.ctrlScope = $scope;
-    }
-]);
