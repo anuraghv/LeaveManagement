@@ -13,7 +13,7 @@
         </wm-nav>
         <wm-nav name="rightTopLinks" type="navbar" class="navbar-right">
             <wm-nav-item name="list_services">
-                <wm-anchor caption="Profile" name="profileButton" iconclass="fa fa-user" on-click="Variables.goToPage_Profile.invoke()"></wm-anchor>
+                <wm-anchor caption="bind:Variables.loggedInUser.dataSet.name" name="profileButton" iconclass="fa fa-user" on-click="Variables.goToPage_Profile.invoke()"></wm-anchor>
             </wm-nav-item>
             <wm-nav-item name="list_services">
                 <wm-anchor caption="Logout" name="logoutButton" iconclass="fa fa-sign-out" on-click="Variables.logoutVariable.invoke()"></wm-anchor>
